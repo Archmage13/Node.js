@@ -18,17 +18,18 @@ function getDate() {
 function getTime() {
   const date = new Date();
 
-  const hour = date.getHours();
+  const hour24 = date.getHours();
+  const hour12 = hour24 < 12 ? hour24 : hour24 - 12;
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
 
-  const formattedHour = hour >= 0 && hour < 12 ? `${hour} AM` : `${hour - 12} PM`;
+  const appendix = hour24 < 12 ? "AM" : "PM";
 
-  return { hour, minutes, seconds, formattedHour };
+  return { hour24, hour12, minutes, seconds, appendix };
 }
 
 const { weekday, day, month, year } = getDate();
-const { minutes, seconds, formattedHour } = getTime;
+const { minutes, seconds, hour12, appendix } = getTime();
 
 console.log(`Today is: ${weekday}, ${day} ${month} ${year}`);
-console.log(`Current time is: ${formattedHour}:${minutes}:${seconds}`);
+console.log(`Current time is: ${hour12}:${minutes}:${seconds} ${appendix}`);
