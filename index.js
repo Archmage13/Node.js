@@ -1,5 +1,4 @@
-import { getDate } from "./src/getDate.js";
-import { getTime } from "./src/getTime.js";
+import { getDate, getTime } from "./src/date.js";
 
 const { weekday, day, month, year } = getDate();
 const { minutes, seconds, hour12, appendix } = getTime();
