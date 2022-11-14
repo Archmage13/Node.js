@@ -1,14 +1,9 @@
-function createPrintButton() {
-	const main = document.querySelector('main');
-	const newButton = document.createElement('button');
-	main.appendChild(newButton);
-	main.lastChild.id = 'btn-print';
-	main.lastChild.innerText = 'Print this page';
-};
+import { createChild } from './createChild.js';
 
 export function printWindow() {
-	createPrintButton();
+	createChild('main', 'button', 'btn-print');
 	const printButton = document.querySelector('#btn-print');
+	printButton.innerText = 'Print this page';
 	printButton.addEventListener('click', () => {
 		window.print();
 	});
