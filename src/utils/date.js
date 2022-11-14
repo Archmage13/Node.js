@@ -1,6 +1,6 @@
-function getDate() {
-  const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+export function getDate() {
+  const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
   const date = new Date();
 
@@ -15,7 +15,7 @@ function getDate() {
   return { year, month, monthIndex, day, dayIndex, weekday };
 };
 
-function getTime() {
+export function getTime() {
   const date = new Date();
 
   const hour24 = date.getHours();
@@ -23,9 +23,7 @@ function getTime() {
   const minutes = date.getMinutes();
   const seconds = date.getSeconds();
 
-  const appendix = hour24 < 12 ? "AM" : "PM";
+  const appendix = hour24 < 12 ? 'AM' : 'PM';
 
   return { hour24, hour12, minutes, seconds, appendix };
 }
-
-export { getDate, getTime };
