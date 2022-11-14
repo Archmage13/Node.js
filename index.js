@@ -1,3 +1,4 @@
-import { displayTime } from './src/utils/displayTime.js';
+import { displayTime, displayDate } from './src/utils/displayTime.js';
 
 console.log(displayTime());
+console.log(displayDate());
