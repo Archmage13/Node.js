@@ -1,4 +1,5 @@
 import { getDate, getTime } from './src/utils/date.js';
+import { triangleArea } from './src/utils/geometry.js';
 
 function displayTime() {
 	const { weekday, day, month, year } = getDate();
@@ -15,3 +16,4 @@ function displayDate() {
 
 console.log(displayTime());
 console.log(displayDate());
+console.log(triangleArea(5, 6, 7));
