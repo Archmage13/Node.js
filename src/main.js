@@ -1,4 +1,5 @@
 import createChild from "./utils/createChild";
+import animateString from "./utils/animateString";
 
 function printPage() {
   createChild("body", "button", "btn-print");
@@ -9,4 +10,12 @@ function printPage() {
   });
 }
 
+function animatedParagraph() {
+  createChild("body", "p", "p-animate");
+  const paragraph = document.querySelector("#p-animate");
+  paragraph.innerText = "JavaScript is awesome!";
+  animateString(paragraph);
+}
+
 printPage();
+animatedParagraph();
