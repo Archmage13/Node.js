@@ -1,5 +1,5 @@
-import { getDate, getTime } from "./src/utils/date.js";
-import { triangleArea } from "./src/utils/geometry.js";
+import { getDate, getTime } from "./src/utils/date";
+import triangleArea from "./src/utils/geometry";
 
 function displayTime() {
   const { dayName, date, month, year } = getDate();

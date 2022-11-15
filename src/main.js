@@ -1,4 +1,4 @@
-import { createChild } from "./utils/createChild.js";
+import createChild from "./utils/createChild";
 
 function printPage() {
   createChild("body", "button", "btn-print");

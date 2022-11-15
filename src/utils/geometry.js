@@ -1,4 +1,4 @@
-export function triangleArea(side1, side2, side3) {
+export default function triangleArea(side1, side2, side3) {
   const perimeter = (side1 + side2 + side3) / 2;
   const area = Math.sqrt(
     perimeter *
