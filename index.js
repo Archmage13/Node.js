@@ -2,16 +2,16 @@ import { getDate, getTime } from "./src/utils/date.js";
 import { triangleArea } from "./src/utils/geometry.js";
 
 function displayTime() {
-  const { weekday, day, month, year } = getDate();
-  const { minutes, seconds, hour12, appendix } = getTime();
-  return `Today is: ${weekday}, ${month} ${day} ${year}
-Current time is: ${hour12}:${minutes}:${seconds} ${appendix}`;
+  const { dayName, date, month, year } = getDate();
+  const { minutes, seconds, hour12Format, appendix } = getTime();
+  return `Today is: ${dayName}, ${month} ${date} ${year}
+Current time is: ${hour12Format}:${minutes}:${seconds} ${appendix}`;
 }
 
 function displayDate() {
-  const { day, monthIndex, year } = getDate();
-  const yearDigits = `${year}`.slice(-2);
-  return `${monthIndex + 1}/${day}/${yearDigits}`;
+  const { date, monthIndex, year } = getDate();
+  const yearLastDigits = `${year}`.slice(-2);
+  return `${monthIndex + 1}/${date}/${yearLastDigits}`;
 }
 
 console.log(displayTime());

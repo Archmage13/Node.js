@@ -13,7 +13,7 @@ export function getDate() {
     "November",
     "December",
   ];
-  const weekdays = [
+  const dayNames = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -22,22 +22,22 @@ export function getDate() {
     "Friday",
     "Saturday",
   ];
-  const date = new Date();
-  const year = date.getFullYear();
-  const monthIndex = date.getMonth();
-  const day = date.getDate();
-  const dayIndex = date.getDay();
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const monthIndex = currentDate.getMonth();
+  const date = currentDate.getDate();
+  const dayIndex = currentDate.getDay();
   const month = monthNames[monthIndex];
-  const weekday = weekdays[dayIndex];
-  return { year, month, monthIndex, day, dayIndex, weekday };
+  const dayName = dayNames[dayIndex];
+  return { year, month, monthIndex, date, dayIndex, dayName };
 }
 
 export function getTime() {
-  const date = new Date();
-  const hour24 = date.getHours();
-  const hour12 = hour24 < 12 ? hour24 : hour24 - 12;
-  const minutes = date.getMinutes();
-  const seconds = date.getSeconds();
-  const appendix = hour24 < 12 ? "AM" : "PM";
-  return { hour24, hour12, minutes, seconds, appendix };
+  const currentDate = new Date();
+  const hour24Format = currentDate.getHours();
+  const hour12Format = hour24Format < 12 ? hour24Format : hour24Format - 12;
+  const minutes = currentDate.getMinutes();
+  const seconds = currentDate.getSeconds();
+  const appendix = hour24Format < 12 ? "AM" : "PM";
+  return { hour24Format, hour12Format, minutes, seconds, appendix };
 }
