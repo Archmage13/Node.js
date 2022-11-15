@@ -9,6 +9,4 @@ function printPage() {
   });
 }
 
-window.onload = () => {
-  printPage();
-};
+printPage();
