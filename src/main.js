@@ -1,5 +1,11 @@
-import createChild from "./utils/createChild";
-import animateString from "./utils/animateString";
+function createChild(parentElementTag, newElementTag, newElementId) {
+  const parentElement = document.querySelector(parentElementTag);
+  const newElement = document.createElement(newElementTag);
+  parentElement.appendChild(newElement);
+  if (newElementId) {
+    parentElement.lastChild.id = newElementId;
+  }
+}
 
 function printPage() {
   createChild("body", "button", "btn-print");
@@ -8,6 +14,15 @@ function printPage() {
   printButton.addEventListener("click", () => {
     window.print();
   });
+}
+
+function animateString(element) {
+  let text = element.innerText;
+  const lastCharacter = text.length - 1;
+  setInterval(() => {
+    text = `${text[lastCharacter]}${text.substring(0, lastCharacter)}`;
+    element.innerText = text;
+  }, 100);
 }
 
 function animatedParagraph() {
