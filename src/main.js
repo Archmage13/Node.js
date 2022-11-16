@@ -16,20 +16,21 @@ function printPage() {
   });
 }
 
-function animateString(element) {
-  let text = element.innerText;
+function animateString(elementId, string) {
+  const element = document.querySelector(`#${elementId}`);
+  let text = string;
   const lastCharacter = text.length - 1;
   setInterval(() => {
     text = `${text[lastCharacter]}${text.substring(0, lastCharacter)}`;
-    element.innerText = text;
+    element.textContent = text;
   }, 100);
 }
 
 function animatedParagraph() {
   createChild("body", "p", "p-animate");
-  const paragraph = document.querySelector("#p-animate");
-  paragraph.innerText = "JavaScript is awesome!";
-  animateString(paragraph);
+  const paragraphId = "p-animate";
+  const paragraphText = "JavaScript is awesome!";
+  animateString(paragraphId, paragraphText);
 }
 
 printPage();

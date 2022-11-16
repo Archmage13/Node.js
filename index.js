@@ -73,3 +73,32 @@ function isLeapYear(year) {
   }
   return false;
 }
+
+function yearsWithSameDate(
+  targetYear,
+  date = { weekday: 0, day: 1, month: 0 }
+) {
+  const { weekday, day, month } = date;
+  const currentYear = new Date().getFullYear();
+  const validYears = [];
+  for (let year = currentYear; year <= targetYear; year += 1) {
+    const targetDate = new Date(year, month, day);
+    if (targetDate.getDay() === weekday) {
+      validYears.push(year);
+    }
+  }
+  return validYears;
+}
+
+function guessTheNumber() {
+  const randomNumber = Math.ceil(Math.random() * 10);
+  // Finish this function
+  return randomNumber;
+}
+
+console.log(displayTime());
+console.log(displayDate());
+console.log(triangleArea(5, 6, 7));
+console.log(isLeapYear(2022));
+console.log(yearsWithSameDate(2050));
+console.log(guessTheNumber());
