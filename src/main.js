@@ -10,7 +10,7 @@ function createChild(parentElementTag, newElementTag, newElementId) {
 function printPage() {
   createChild("body", "button", "btn-print");
   const printButton = document.querySelector("#btn-print");
-  printButton.innerText = "Print this page";
+  printButton.textContent = "Print this page";
   printButton.addEventListener("click", () => {
     window.print();
   });
@@ -33,5 +33,24 @@ function animatedParagraph() {
   animateString(paragraphId, paragraphText);
 }
 
+function guessTheNumber() {
+  createChild('body', 'button', 'btn-start-game');
+  const startGameButton = document.querySelector('#btn-start-game');
+  startGameButton.textContent = 'Start game';
+  startGameButton.addEventListener('click', () => {
+    const randomNumber = Math.ceil(Math.random() * 10);
+    while (true) {
+      const guess = prompt('Guess the number between 1 and 10');
+      if (guess === randomNumber) {
+        alert('Match!');
+        break;
+      } else {
+        alert('Wrong! Try again.');
+      }
+    }
+  });
+}
+
 printPage();
 animatedParagraph();
+guessTheNumber();

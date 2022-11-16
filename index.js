@@ -90,15 +90,8 @@ function yearsWithSameDate(
   return validYears;
 }
 
-function guessTheNumber() {
-  const randomNumber = Math.ceil(Math.random() * 10);
-  // Finish this function
-  return randomNumber;
-}
-
-console.log(displayTime());
-console.log(displayDate());
-console.log(triangleArea(5, 6, 7));
-console.log(isLeapYear(2022));
-console.log(yearsWithSameDate(2050));
-console.log(guessTheNumber());
+// console.log(displayTime());
+// console.log(displayDate());
+// console.log(triangleArea(5, 6, 7));
+// console.log(isLeapYear(2022));
+// console.log(yearsWithSameDate(2050));
